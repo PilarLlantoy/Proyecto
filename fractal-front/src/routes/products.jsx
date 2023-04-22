@@ -5,7 +5,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -16,8 +15,7 @@ import Stack from '@mui/material/Stack';
 import axios from "axios";
 import { useState, useEffect } from 'react';
 
-export default function MyOrders() {
-  const navigate = useNavigate();
+export default function Products() {
   const baseURL = "http://localhost:8080/order/findAllOrder";
   const [ordenes, setOrdenes] = useState([]);
 
@@ -33,6 +31,7 @@ export default function MyOrders() {
     crearListado();
   }, []);
 
+
   
   
 
@@ -41,10 +40,10 @@ export default function MyOrders() {
 
       <div style={{display: "flex", justifyContent: "space-between", alignItems: 'center'}}>
         <div>
-          <h1>My Orders</h1>
+          <h1>Products</h1>
         </div>
         <div> 
-          <Button variant="contained" endIcon={<AddIcon />} onClick={() => navigate('/addEditOrder')}>New Order</Button>
+          <Button variant="contained" endIcon={<AddIcon />}>New Order</Button>
         </div>
         
       </div>

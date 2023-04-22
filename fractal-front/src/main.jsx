@@ -8,6 +8,8 @@ import "./index.css";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import MyOrders from "./routes/myOrders";
+import Products from "./routes/products";
+import AddEditOrder from "./routes/addEditOrder";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
   {
     path: "my-orders",
     element: <MyOrders />,
+  },
+  {
+    path: "products",
+    element: <Products />,
+  },
+  {
+    path: "addEditOrder",
+    element: <AddEditOrder />,
   },
 ]);
 
