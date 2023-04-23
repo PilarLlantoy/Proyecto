@@ -20,7 +20,6 @@ export default function MyOrders() {
   const navigate = useNavigate();
   const baseURL = "http://localhost:8080/order/findAllOrder";
   const [ordenes, setOrdenes] = useState([]);
-
   function crearListado(){
     axios.get(baseURL).then((response) => {
       setOrdenes(response.data);
@@ -75,7 +74,7 @@ export default function MyOrders() {
                 <TableCell>{row.statusOrder}</TableCell>
                 <TableCell>
                 <Stack direction="row" spacing={2}>
-                  <Button variant="contained" endIcon={<EditIcon />}>
+                  <Button variant="contained" endIcon={<EditIcon />} onClick={() => navigate('/addEditOrder?type=Edit&id='+row.idOrder)}>
                     Edit
                   </Button>
                   <Button variant="contained" endIcon={<DeleteIcon />}>
